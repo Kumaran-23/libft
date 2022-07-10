@@ -27,15 +27,6 @@ int	ft_ulen(unsigned int num)
 
 void	ft_uputnbr(unsigned long nbr)
 {
-	int	len;
-
-	len = 0;
-	if (nbr < 0)
-	{
-		ft_putchar('-');
-		nbr *= -1;
-		len++;
-	}
 	if (nbr >= 10)
 	{
 		ft_uputnbr(nbr / 10);
@@ -49,11 +40,6 @@ int	ft_uprintnbr(unsigned int num)
 {
 	if (num == 0)
 		return (ft_putchar('0'));
-	if (num < 0)
-	{
-		ft_uputnbr(num);
-		return (ft_ulen(num));
-	}
 	else
 		ft_uputnbr(num);
 	return (ft_ulen(num));
